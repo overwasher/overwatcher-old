@@ -1,3 +1,4 @@
+process.env['NODE_CONFIG_DIR'] = __dirname + '/../configs';
 import config from 'config';
 import fs from 'fs';
 import path from 'path';

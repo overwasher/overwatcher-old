@@ -3,13 +3,12 @@ process.env['NODE_CONFIG_DIR'] = __dirname + '/configs';
 import 'dotenv/config';
 import 'reflect-metadata';
 import App from '@/app';
-import { AuthController } from '@controllers/auth.controller';
 import { IndexController } from '@controllers/index.controller';
-import { UsersController } from '@controllers/users.controller';
 import { SensorNodeController } from './controllers/sensornode.controller';
 import validateEnv from '@utils/validateEnv';
+import { SensorsStatusController } from './controllers/status.controller';
 
 validateEnv();
 
-const app = new App([AuthController, IndexController, UsersController, SensorNodeController]);
+const app = new App([IndexController, SensorNodeController, SensorsStatusController]);
 app.listen();

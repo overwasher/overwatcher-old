@@ -1,0 +1,7 @@
+###
+# baseURL
+@baseUrl = http://localhost:3000
+
+###
+# Get status
+GET {{baseUrl}}/status/v1
