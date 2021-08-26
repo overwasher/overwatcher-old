@@ -44,13 +44,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Docker Deployment
-        uses: overwasher/docker-deployment-action
-        remote_docker_host: ow-deploy@emilia.h.dcnick3.me
-        ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-        ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
-        deployment_mode: docker-compose
-        args: up -d
-        tag: ${{ steps.image.digest }}
-        docker_prune: 'true'
-        pull_images_first: 'true'
+        uses: overwasher/docker-deployment-action@master
+        with:
+          remote_docker_host: ow-deploy@emilia.h.dcnick3.me
+          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+          ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+          deployment_mode: docker-compose
+          args: up -d
+          tag: ${{ steps.image.digest }}
+          docker_prune: 'true'
+          pull_images_first: 'true'
         
