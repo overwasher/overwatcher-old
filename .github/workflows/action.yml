@@ -56,3 +56,4 @@ jobs:
           pull_images_first: 'true'
           copy_stack_file: 'true'
           stack_file_name: 'docker-compose.yml'
+          deploy_path: '/home/ow-deploy/overwatcher'
