@@ -1,7 +1,7 @@
 # Common build stage
 FROM node:14.17.5-alpine3.14 as common-build-stage
 
-EXPOSE 3000
+EXPOSE 80
 ENV NODE_ENV production
 WORKDIR /app
 
@@ -9,6 +9,7 @@ WORKDIR /app
 # not installing dev deps separately to save space (sacrificing cacheability =()
 COPY . /app/
 RUN cd /app/ \
+    && echo PORT=80 > .env \
     && yarn install --pure-lockfile --production=false \
     && yarn build \
     && yarn install --pure-lockfile --production=true \
