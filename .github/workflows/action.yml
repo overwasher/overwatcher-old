@@ -54,5 +54,4 @@ jobs:
           tag: ${{ steps.image.outputs.digest }}
           docker_prune: 'true'
           pull_images_first: 'true'
-          copy_stack_file: 'true''
-        
+          copy_stack_file: 'true'
