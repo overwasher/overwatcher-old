@@ -51,7 +51,7 @@ jobs:
           ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
           deployment_mode: docker-compose
           args: up -d
-          tag: ${{ steps.image.digest }}
+          tag: ${{ steps.image.outputs.digest }}
           docker_prune: 'true'
           pull_images_first: 'true'
         
