@@ -7,5 +7,4 @@ module.exports = {
   cors: {
     origin: true,
   },
-  staleInterval: 5,
 };

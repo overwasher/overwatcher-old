@@ -9,7 +9,7 @@ module.exports = {
     origin: undefined,
     credentials: true,
   },
-  staleInterval: 60,
-  stubSensorAuth: false,
+  staleInterval: 60000, // 60s
+  stubSensorAuth: true,
   sendErrorStacktrace: false,
 };

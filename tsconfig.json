@@ -32,6 +32,6 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.json", ".env"],
+  "include": ["src/**/*.ts", "src/configs/*.js", ".env"],
   "exclude": ["node_modules"]
 }

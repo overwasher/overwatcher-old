@@ -9,6 +9,7 @@
 .huskyrc
 .lintstagedrc.json
 .prettierrc
+.git
 
 # test
 jest.config.js
@@ -16,3 +17,6 @@ jest.config.js
 # docker
 Dockerfile
 docker-compose.yml
+
+yarn-error.log
+src/logs

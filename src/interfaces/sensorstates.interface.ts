@@ -1,6 +1,6 @@
 import { Request } from 'express';
 
-export type SensorState = 'active' | 'inactive';
+export type SensorState = 'active' | 'inactive' | 'unknown';
 
 export interface TimedSensorState {
   state: SensorState;
@@ -8,10 +8,9 @@ export interface TimedSensorState {
 }
 
 export interface DumpedSensorState {
-  name: string;
+  id: string;
   state: SensorState;
-  lastUpdated: number;
-  stale: boolean;
+  lastContact: number;
 }
 
 export interface RequestWithSensorId extends Request {

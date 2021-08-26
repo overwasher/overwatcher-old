@@ -21,10 +21,19 @@ export class SensorStatesService {
     return state.lastUpdated + this.#staleInterval < Date.now();
   }
 
-  public get(id: string): [SensorState, boolean] {
-    const res = this.#state.get(id);
+  private mapSensorState(id: string, state: TimedSensorState): DumpedSensorState {
+    const stale = this.isStale(state);
 
-    return [res.state, this.isStale(res)];
+    return <DumpedSensorState>{
+      id,
+      lastContact: state.lastUpdated,
+      state: stale ? 'unknown' : state.state,
+    };
+  }
+
+  public get(id: string): DumpedSensorState {
+    const res = this.#state.get(id);
+    return this.mapSensorState(id, res);
   }
 
   public keys(): IterableIterator<string> {
@@ -32,12 +41,7 @@ export class SensorStatesService {
   }
 
   public dump(): DumpedSensorState[] {
-    return [...this.#state].map<DumpedSensorState>(x => ({
-      name: x[0],
-      stale: this.isStale(x[1]),
-      lastUpdated: x[1].lastUpdated,
-      state: x[1].state,
-    }));
+    return [...this.#state].map<DumpedSensorState>(s => this.mapSensorState(s[0], s[1]));
   }
 }
 

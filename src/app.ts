@@ -89,7 +89,7 @@ class App {
       },
       info: {
         description: 'Generated with `routing-controllers-openapi`',
-        title: 'A sample API',
+        title: 'Overwatcher API',
         version: '1.0.0',
       },
     });
