@@ -1,7 +1,28 @@
 ###
 # baseURL
-@baseUrl = http://localhost:3000
+@baseUrl = https://overwatcher.ow.dcnick3.me/
+#http://localhost:3000
 
 ###
 # Get index
 GET {{baseUrl}}/
+
+###
+# Push update to test-sensor
+POST {{baseUrl}}/sensor/v1/update
+Content-Type: application/json
+Authorization: Bearer test-sensor
+
+{"state":"active"}
+
+###
+# Push update to another-test-sensor
+POST {{baseUrl}}/sensor/v1/update
+Content-Type: application/json
+Authorization: Bearer another-test-sensor
+
+{"state":"inactive"}
+
+###
+# Get status
+GET {{baseUrl}}/status/v1
