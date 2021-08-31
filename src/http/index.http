@@ -1,7 +1,7 @@
 ###
 # baseURL
-@baseUrl = https://overwatcher.ow.dcnick3.me/
-#http://localhost:3000
+#@baseUrl = https://overwatcher.ow.dcnick3.me/
+@baseUrl = http://localhost:3000
 
 ###
 # Get index
