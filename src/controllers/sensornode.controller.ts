@@ -15,6 +15,6 @@ export class SensorNodeController {
   @OpenAPI({ summary: 'Post a sensor node state update' })
   async postUpdate(@Req() req: RequestWithSensorId, @Body() update: SensorNodeUpdateDto) {
     sensorStatesService.update(req.sensorId, update.state);
-    return 'OK';
+    return true;
   }
 }
