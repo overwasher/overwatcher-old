@@ -6,7 +6,7 @@ GET {{baseUrl}}/
 # Push update to test-sensor
 POST {{baseUrl}}/sensor/v1/update
 Content-Type: application/json
-Authorization: Bearer test-sensor
+Authorization: Bearer /innopolis/dorms/1/levels/3/washers/1
 
 {"state":"active"}
 
@@ -14,7 +14,7 @@ Authorization: Bearer test-sensor
 # Push update to another-test-sensor
 POST {{baseUrl}}/sensor/v1/update
 Content-Type: application/json
-Authorization: Bearer another-test-sensor
+Authorization: Bearer /innopolis/dorms/1/levels/3/washers/2
 
 {"state":"inactive"}
 
