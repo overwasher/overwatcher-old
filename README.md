@@ -3,4 +3,6 @@
 
 Project that allows users to find most convenient washing machine to use in the Innopolis dorms
 
+[NOTICE]: this is a legacy version of the overwatcher, retained for historical purposes. It was rewritten in C# to allow for more testability and maintainability.
+
 Overwatcher component - receives, aggregates and archives sensor node data and provides a nice API to query the current states.
